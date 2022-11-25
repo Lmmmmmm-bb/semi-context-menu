@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { HelloWorld } from 'lm-react-lib-starter';
+import { SemiContextMenu } from 'lm-react-lib-starter';
 import reactLogo from './assets/react.svg';
 import './App.css';
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className='App'>
-      <HelloWorld />
+      <SemiContextMenu clickTriggerToHide>Hello World</SemiContextMenu>
       <div>
         <a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
           <img src='/vite.svg' className='logo' alt='Vite logo' />

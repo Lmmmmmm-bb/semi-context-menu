@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@douyinfe/semi-ui": "^2.24.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -15,8 +16,8 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
+    "lm-react-lib-starter": "workspace:*",
     "typescript": "^4.6.4",
-    "vite": "^3.2.3",
-    "lm-react-lib-starter": "workspace:*"
+    "vite": "^3.2.3"
   }
 }
