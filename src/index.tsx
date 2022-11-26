@@ -83,20 +83,6 @@ export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
         position='bottomLeft'
         rePosKey={renderKey}
         visible={visible}
-        render={
-          <Dropdown.Menu>
-            <Dropdown.Title>分组1</Dropdown.Title>
-            <Dropdown.Item type='primary'>primary</Dropdown.Item>
-            <Dropdown.Item type='secondary'>secondary</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Title>分组2</Dropdown.Title>
-            <Dropdown.Item type='tertiary'>tertiary</Dropdown.Item>
-            <Dropdown.Item type='warning' active>
-              warning
-            </Dropdown.Item>
-            <Dropdown.Item type='danger'>danger</Dropdown.Item>
-          </Dropdown.Menu>
-        }
         {...dropdownProps}
       >
         <span style={{ position: 'fixed', ...position }} />
