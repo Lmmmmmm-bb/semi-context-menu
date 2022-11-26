@@ -1,12 +1,17 @@
-import { FC } from 'react';
-import { Dropdown, Toast } from '@douyinfe/semi-ui';
-import { SemiContextMenu } from 'semi-context-menu';
-import { IconCopy, IconRefresh } from '@douyinfe/semi-icons';
+# Semi Context Menu
 
-import './index.css';
-import Block from '../components/block';
+[![CodeQL](https://github.com/Lmmmmmm-bb/semi-context-menu/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Lmmmmmm-bb/semi-context-menu/actions/workflows/codeql-analysis.yml)
+[![GitHub license](https://img.shields.io/github/license/Lmmmmmm-bb/semi-context-menu)](https://github.com/Lmmmmmm-bb/semi-context-menu/blob/main/LICENSE)
 
-const App: FC = () => {
+This is a simple context menu, based on the [Semi Design](https://semi.design/) Dropdown component.
+
+- No extra dependencies.
+- No extra props, all props base Semi Design Dropdown.
+
+## Example
+
+```tsx
+export default () => {
   const renderItem = (left: string, right: string) => (
     <div className='item'>
       <div className='left'>{left}</div>
@@ -33,10 +38,9 @@ const App: FC = () => {
   return (
     <div className='App'>
       <SemiContextMenu clickToHide render={menu}>
-        <Block>Context Menu Operable Area</Block>
+        <div>This is Context Menu Operable Area</div>
       </SemiContextMenu>
     </div>
   );
 };
-
-export default App;
+```
