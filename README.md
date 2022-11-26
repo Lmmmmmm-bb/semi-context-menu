@@ -1,7 +1,9 @@
 # Semi Context Menu
 
 [![CodeQL](https://github.com/Lmmmmmm-bb/semi-context-menu/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Lmmmmmm-bb/semi-context-menu/actions/workflows/codeql-analysis.yml)
+[![Release](https://github.com/Lmmmmmm-bb/semi-context-menu/actions/workflows/release.yml/badge.svg)](https://github.com/Lmmmmmm-bb/semi-context-menu/actions/workflows/release.yml)
 [![GitHub license](https://img.shields.io/github/license/Lmmmmmm-bb/semi-context-menu)](https://github.com/Lmmmmmm-bb/semi-context-menu/blob/main/LICENSE)
+[![Npm Release](https://img.shields.io/github/v/release/Lmmmmmm-bb/semi-context-menu)](https://github.com/Lmmmmmm-bb/semi-context-menu/releases)
 
 This is a simple context menu, based on the [Semi Design](https://semi.design/) Dropdown component.
 
