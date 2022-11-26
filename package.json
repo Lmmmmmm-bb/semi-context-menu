@@ -4,15 +4,15 @@
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@7.17.0",
-  "description": "A react component lib starter",
+  "description": "Context Menu based on Semi Design.",
   "author": {
     "email": "lmmmmmm12138@gmail.com",
     "name": "_lmmmmmm"
   },
-  "homepage": "https://github.com/Lmmmmmm-bb/react-lib-starter",
+  "homepage": "https://github.com/Lmmmmmm-bb/semi-context-menu",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lmmmmmm-bb/react-lib-starter"
+    "url": "git+https://github.com/Lmmmmmm-bb/semi-context-menu"
   },
   "files": [
     "dist"

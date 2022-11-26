@@ -31,6 +31,8 @@ export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
   );
 
   const handleContextMenuShow = useCallback((e: MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setVisible(true);
     setPosition({ top: e.clientY, left: e.clientX });
     setRenderKey((preRenderKey) => preRenderKey + 1);
