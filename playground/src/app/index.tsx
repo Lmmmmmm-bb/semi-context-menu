@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Dropdown, Toast } from '@douyinfe/semi-ui';
-import { SemiContextMenu } from 'lm-react-lib-starter';
+import { SemiContextMenu } from 'semi-context-menu';
 import { IconCopy, IconRefresh } from '@douyinfe/semi-icons';
 
 import './index.css';
