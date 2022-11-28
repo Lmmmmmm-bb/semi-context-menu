@@ -1,6 +1,5 @@
 import {
   FC,
-  MouseEvent as ReactMouseEvent,
   PropsWithChildren,
   useCallback,
   useEffect,
@@ -10,66 +9,57 @@ import {
 import { Dropdown } from '@douyinfe/semi-ui';
 
 import styles from './index.module.scss';
-import { SemiContextMenuProps } from './interface';
+import { MouseEventType, SemiContextMenuProps } from './interface';
 
 export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
   props
 ) => {
   const { children, className, ...dropdownProps } = props;
+  // context menu mask dom ref
   const maskRef = useRef<HTMLDivElement | null>(null);
+  // position key to force update of context menu
   const [renderKey, setRenderKey] = useState(0);
   const [visible, setVisible] = useState(false);
+  // context menu position
   const [position, setPosition] = useState({ top: 0, left: 0 });
 
-  const handleContextMenu = useCallback(
-    (e: ReactMouseEvent<HTMLDivElement>) => {
-      e.preventDefault();
-      e.stopPropagation();
-      handleContextMenuShow(e as never as MouseEvent);
-    },
-    []
-  );
-
-  const handleContextMenuShow = useCallback((e: MouseEvent) => {
+  // prevent default context menu and stop propagation
+  const preventDefault = useCallback((e: MouseEventType) => {
     e.preventDefault();
     e.stopPropagation();
+  }, []);
+
+  const handleShowContextMenu = useCallback((e: MouseEventType) => {
+    preventDefault(e);
     setVisible(true);
     setPosition({ top: e.clientY, left: e.clientX });
+    // force update context menu position
     setRenderKey((preRenderKey) => preRenderKey + 1);
     maskRef.current && document.body.appendChild(maskRef.current);
   }, []);
 
-  const handleContextMenuHide = useCallback((e: Event) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleHideContextMenu = useCallback((e: MouseEventType) => {
+    preventDefault(e);
     setVisible(false);
     maskRef.current && document.body.removeChild(maskRef.current);
   }, []);
 
+  // mask dom event listener
   useEffect(() => {
     maskRef.current = document.createElement('div');
     maskRef.current.className = styles.maskWrapper;
 
     maskRef.current?.addEventListener(
       'mousedown',
-      handleContextMenuHide,
-      false
-    );
-    maskRef.current?.addEventListener(
-      'contextmenu',
-      handleContextMenuShow,
+      handleHideContextMenu,
       false
     );
 
+    // remove event listener when unmount
     return () => {
       maskRef.current?.removeEventListener(
         'mousedown',
-        handleContextMenuHide,
-        false
-      );
-      maskRef.current?.removeEventListener(
-        'contextmenu',
-        handleContextMenuShow,
+        handleHideContextMenu,
         false
       );
     };
@@ -77,7 +67,7 @@ export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
 
   return (
     <>
-      <div className={className} onContextMenu={handleContextMenu}>
+      <div className={className} onContextMenu={handleShowContextMenu}>
         {children}
       </div>
       <Dropdown

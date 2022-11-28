@@ -7,7 +7,7 @@ export default defineConfig({
   minify: true,
   treeshake: true,
   splitting: true,
-  entry: ['./src/index.tsx'],
+  entry: ['./src/index.ts'],
   format: ['cjs', 'esm'],
   esbuildPlugins: [ScssModulesPlugin()]
 });
