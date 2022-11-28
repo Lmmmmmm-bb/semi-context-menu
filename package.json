@@ -5,6 +5,14 @@
   "type": "module",
   "packageManager": "pnpm@7.17.0",
   "description": "Context Menu based on Semi Design.",
+  "keywords": [
+    "semi-design",
+    "context-menu",
+    "react-context-menu",
+    "react",
+    "react-component",
+    "react-component-library"
+  ],
   "author": {
     "email": "lmmmmmm12138@gmail.com",
     "name": "_lmmmmmm"
