@@ -22,6 +22,10 @@
     "type": "git",
     "url": "git+https://github.com/Lmmmmmm-bb/semi-context-menu"
   },
+  "bugs": {
+    "url": "https://github.com/Lmmmmmm-bb/semi-context-menu/issues",
+    "email": "lmmmmmm12138@gmail.com"
+  },
   "files": [
     "dist"
   ],
