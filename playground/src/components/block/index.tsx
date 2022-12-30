@@ -1,9 +1,15 @@
-import { FC, PropsWithChildren } from 'react';
+import { CSSProperties, FC, PropsWithChildren } from 'react';
 
 import './index.css';
 
-const Block: FC<PropsWithChildren> = (props) => (
-  <div className='block'>{props.children}</div>
+interface BlockProps {
+  color: CSSProperties['backgroundColor'];
+}
+
+const Block: FC<PropsWithChildren<BlockProps>> = (props) => (
+  <div className='block' style={{ backgroundColor: props.color }}>
+    {props.children}
+  </div>
 );
 
 export default Block;

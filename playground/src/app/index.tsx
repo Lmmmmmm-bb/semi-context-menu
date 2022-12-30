@@ -1,42 +1,22 @@
 import { FC } from 'react';
-import { Dropdown, Toast } from '@douyinfe/semi-ui';
-import { SemiContextMenu } from 'semi-context-menu';
-import { IconCopy, IconRefresh } from '@douyinfe/semi-icons';
+import { Typography } from '@douyinfe/semi-ui';
 
 import './index.css';
-import Block from '../components/block';
+import { examplesSource } from './config';
+import { Base, WithProps } from '../examples';
 
-const App: FC = () => {
-  const renderItem = (left: string, right: string) => (
-    <div className='item'>
-      <div className='left'>{left}</div>
-      <div className='right'>{right}</div>
-    </div>
-  );
+const { Text } = Typography;
 
-  const menu = (
-    <Dropdown.Menu>
-      <Dropdown.Title>Context Menu</Dropdown.Title>
-      <Dropdown.Divider />
-      <Dropdown.Item icon={<IconCopy />} onClick={() => Toast.success('Copy')}>
-        {renderItem('Copy', 'Ctrl + C')}
-      </Dropdown.Item>
-      <Dropdown.Item
-        icon={<IconRefresh />}
-        onClick={() => Toast.success('Refresh')}
-      >
-        {renderItem('Refresh', 'Ctrl + R')}
-      </Dropdown.Item>
-    </Dropdown.Menu>
-  );
-
-  return (
-    <div className='App'>
-      <SemiContextMenu clickToHide render={menu}>
-        <Block>Context Menu Operable Area</Block>
-      </SemiContextMenu>
-    </div>
-  );
-};
+const App: FC = () => (
+  <div className='App'>
+    <header>
+      <Text link={{ href: examplesSource, target: '_blank' }}>
+        <h2>Example Code</h2>
+      </Text>
+    </header>
+    <Base />
+    <WithProps />
+  </div>
+);
 
 export default App;
