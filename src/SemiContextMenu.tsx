@@ -8,7 +8,6 @@ import {
 } from 'react';
 import { Dropdown } from '@douyinfe/semi-ui';
 
-import styles from './index.module.scss';
 import { type MouseEventType, type SemiContextMenuProps } from './interface';
 
 export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
@@ -47,7 +46,13 @@ export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
     };
 
     maskRef.current = document.createElement('div');
-    maskRef.current.className = styles.maskWrapper;
+    maskRef.current.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    `;
 
     maskRef.current?.addEventListener(
       'mousedown',

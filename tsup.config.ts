@@ -1,5 +1,4 @@
 import { defineConfig } from 'tsup';
-import { ScssModulesPlugin } from 'esbuild-scss-modules-plugin';
 
 export default defineConfig({
   dts: true,
@@ -9,5 +8,4 @@ export default defineConfig({
   splitting: true,
   entry: ['./src/index.ts'],
   format: ['esm'],
-  esbuildPlugins: [ScssModulesPlugin()],
 });
