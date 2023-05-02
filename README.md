@@ -27,9 +27,9 @@ pnpm i semi-context-menu
 ```tsx
 export default () => {
   const renderItem = (left: string, right: string) => (
-    <div className='item'>
-      <div className='left'>{left}</div>
-      <div className='right'>{right}</div>
+    <div className="item">
+      <div className="left">{left}</div>
+      <div className="right">{right}</div>
     </div>
   );
 
@@ -50,7 +50,7 @@ export default () => {
   );
 
   return (
-    <div className='App'>
+    <div className="App">
       <SemiContextMenu clickToHide render={menu}>
         <div>This is Context Menu Operable Area</div>
       </SemiContextMenu>

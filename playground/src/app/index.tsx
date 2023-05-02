@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 import { Typography } from '@douyinfe/semi-ui';
 
 import './index.css';
@@ -8,7 +8,7 @@ import { Base, WithProps } from '../examples';
 const { Text } = Typography;
 
 const App: FC = () => (
-  <div className='App'>
+  <div className="App">
     <header>
       <Text link={{ href: examplesSource, target: '_blank' }}>
         <h2>Example Code</h2>

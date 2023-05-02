@@ -1,22 +1,14 @@
 {
   "name": "semi-context-menu",
-  "version": "0.2.0",
-  "license": "MIT",
   "type": "module",
+  "version": "0.2.0",
   "packageManager": "pnpm@7.29.1",
   "description": "Context Menu based on Semi Design.",
-  "keywords": [
-    "semi-design",
-    "context-menu",
-    "react-context-menu",
-    "react",
-    "react-component",
-    "react-component-library"
-  ],
   "author": {
     "email": "lmmmmmm12138@gmail.com",
     "name": "_lmmmmmm"
   },
+  "license": "MIT",
   "homepage": "https://github.com/Lmmmmmm-bb/semi-context-menu",
   "repository": {
     "type": "git",
@@ -26,50 +18,53 @@
     "url": "https://github.com/Lmmmmmm-bb/semi-context-menu/issues",
     "email": "lmmmmmm12138@gmail.com"
   },
+  "keywords": [
+    "semi-design",
+    "context-menu",
+    "react-context-menu",
+    "react",
+    "react-component",
+    "react-component-library"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
-  "module": "dist/index.js",
-  "main": "dist/index.cjs",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
   "scripts": {
     "dev": "pnpm style:watch & tsup --watch",
     "playground": "vite playground --host & pnpm style:watch",
     "build": "tsup",
     "build:playground": "vite build playground",
-    "lint:check": "prettier --check .",
-    "lint:format": "prettier --write .",
-    "lint:fix": "eslint --ext .tsx,.ts,.js . --fix",
+    "lint": "eslint . --fix",
     "prepare": "husky install",
     "style:watch": "typed-scss-modules src --watch --ignore \"**/index.scss\"",
     "release": "bumpp --commit --tag --push && pnpm publish --no-git-checks"
   },
   "peerDependencies": {
+    "@douyinfe/semi-ui": ">=2",
     "react": ">=18",
-    "react-dom": ">=18",
-    "@douyinfe/semi-ui": ">=2"
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@douyinfe/semi-ui": "^2.30.2",
+    "@lmmmmmm/eslint-config": "^0.1.0",
+    "@lmmmmmm/eslint-config-react": "^0.1.0",
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.55.0",
-    "@typescript-eslint/parser": "^5.55.0",
     "bumpp": "^9.0.0",
     "esbuild-scss-modules-plugin": "^1.1.1",
     "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.7.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.4",
@@ -82,7 +77,6 @@
     "vite": "^4.1.4"
   },
   "lint-staged": {
-    "**/*": "prettier --write . --ignore-unknown",
-    "*.{js,ts,tsx}": "eslint --ext .tsx,.ts,.js . --fix"
+    "*.{js,ts,tsx}": "eslint . --fix"
   }
 }

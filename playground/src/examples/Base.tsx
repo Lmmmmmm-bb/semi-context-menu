@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 import { Dropdown, Toast } from '@douyinfe/semi-ui';
 import { SemiContextMenu } from 'semi-context-menu';
 import { IconCopy, IconRefresh } from '@douyinfe/semi-icons';
@@ -25,7 +25,7 @@ const Base: FC = () => {
 
   return (
     <SemiContextMenu clickToHide render={menu}>
-      <Block color='orange'>Base Usage</Block>
+      <Block color="orange">Base Usage</Block>
     </SemiContextMenu>
   );
 };

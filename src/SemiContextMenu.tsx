@@ -1,18 +1,18 @@
 import {
-  FC,
-  PropsWithChildren,
+  type FC,
+  type PropsWithChildren,
   useCallback,
   useEffect,
   useRef,
-  useState
+  useState,
 } from 'react';
 import { Dropdown } from '@douyinfe/semi-ui';
 
 import styles from './index.module.scss';
-import { MouseEventType, SemiContextMenuProps } from './interface';
+import { type MouseEventType, type SemiContextMenuProps } from './interface';
 
 export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
-  props
+  props,
 ) => {
   const { children, className, ...dropdownProps } = props;
   // context menu mask dom ref
@@ -34,25 +34,25 @@ export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
     setVisible(true);
     setPosition({ top: e.clientY, left: e.clientX });
     // force update context menu position
-    setRenderKey((preRenderKey) => preRenderKey + 1);
+    setRenderKey(preRenderKey => preRenderKey + 1);
     maskRef.current && document.body.appendChild(maskRef.current);
-  }, []);
-
-  const handleHideContextMenu = useCallback((e: MouseEventType) => {
-    preventDefault(e);
-    setVisible(false);
-    maskRef.current && document.body.removeChild(maskRef.current);
-  }, []);
+  }, [preventDefault]);
 
   // mask dom event listener
   useEffect(() => {
+    const handleHideContextMenu = (e: MouseEventType) => {
+      preventDefault(e);
+      setVisible(false);
+      maskRef.current && document.body.removeChild(maskRef.current);
+    };
+
     maskRef.current = document.createElement('div');
     maskRef.current.className = styles.maskWrapper;
 
     maskRef.current?.addEventListener(
       'mousedown',
       handleHideContextMenu,
-      false
+      false,
     );
 
     // remove event listener when unmount
@@ -60,10 +60,10 @@ export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
       maskRef.current?.removeEventListener(
         'mousedown',
         handleHideContextMenu,
-        false
+        false,
       );
     };
-  }, []);
+  }, [preventDefault]);
 
   return (
     <>
@@ -71,8 +71,8 @@ export const SemiContextMenu: FC<PropsWithChildren<SemiContextMenuProps>> = (
         {children}
       </div>
       <Dropdown
-        trigger='custom'
-        position='bottomLeft'
+        trigger="custom"
+        position="bottomLeft"
         rePosKey={renderKey}
         visible={visible}
         {...dropdownProps}
