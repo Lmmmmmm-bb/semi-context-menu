@@ -8,6 +8,6 @@ export default defineConfig({
   treeshake: true,
   splitting: true,
   entry: ['./src/index.ts'],
-  format: ['cjs', 'esm'],
+  format: ['esm'],
   esbuildPlugins: [ScssModulesPlugin()],
 });

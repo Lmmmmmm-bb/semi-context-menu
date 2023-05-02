@@ -28,19 +28,20 @@
   ],
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
       "import": "./dist/index.js"
     }
   },
-  "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=14.6"
+  },
   "scripts": {
     "dev": "pnpm style:watch & tsup --watch",
-    "playground": "vite playground --host & pnpm style:watch",
+    "play": "vite playground --host & pnpm style:watch",
     "build": "tsup",
     "build:playground": "vite build playground",
     "lint": "eslint . --fix",

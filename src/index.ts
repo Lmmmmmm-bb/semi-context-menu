@@ -1,2 +1,2 @@
 export { SemiContextMenu } from './SemiContextMenu';
-export { SemiContextMenuProps } from './interface';
+export type { SemiContextMenuProps } from './interface';
